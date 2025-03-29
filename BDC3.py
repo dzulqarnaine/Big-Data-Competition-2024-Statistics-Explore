@@ -37,10 +37,10 @@ def halaman_penjelasan():
 
     # Path ke gambar
     image_paths = [
-        r"Image\None.jpg",
-        r"Image\Fire.jpg",
-        r"Image\Smoke.jpg",
-        r"Image\Smoke and Fire.jpg"
+        r"Image/None.jpg",
+        r"Image/Fire.jpg",
+        r"Image/Smoke.jpg",
+        r"Image/Smoke and Fire.jpg"
     ]
     
     descriptions = [
