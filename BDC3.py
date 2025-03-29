@@ -44,7 +44,7 @@ def halaman_penjelasan():
     ]
     
     descriptions = [
-        """Pengamatan visual yang cermat terhadap keseluruhan gambar tidak
+        """Kelas NONE. Pengamatan visual yang cermat terhadap keseluruhan gambar tidak
         memberikan indikasi adanya tanda-tanda kebakaran yang biasanya 
         tampak dalam situasi darurat, seperti jejak hangus pada permukaan,
         bekas-bekas material yang terbakar, atau adanya asap tipis yang
@@ -56,14 +56,14 @@ def halaman_penjelasan():
         keyakinan yang tinggi bahwa kondisi di lokasi tersebut saat ini sepenuhnya
         aman dan tidak menunjukkan adanya ancaman kebakaran yang perlu diwaspadai.""",
 
-        """Gambar ini menunjukkan keberadaan api yang mendominasi area tersebut, 
+        """Kelas Fire. Gambar ini menunjukkan keberadaan api yang mendominasi area tersebut, 
         dengan nyala api yang jelas terlihat serta indikasi bahwa api tersebut dapat
         berkembang dengan cepat jika tidak segera dikendalikan. Warna-warna cerah 
         seperti merah dan oranye mencolok mengindikasikan bahwa api berada dalam fase 
         aktif, dengan kemungkinan bahaya besar terhadap lingkungan sekitarnya jika tidak
         diatasi dengan segera.""",
 
-        """Gambar ini secara jelas menunjukkan dominasi adanya asap yang tebal dan membubung
+        """Kelas Smoke. Gambar ini secara jelas menunjukkan dominasi adanya asap yang tebal dan membubung
         ke udara, menciptakan suasana yang misterius dan mendalam. Asap tersebut tampak 
         menyelimuti area sekitarnya, dengan warna abu-abu gelap yang menunjukkan potensi adanya 
         kebakaran atau sumber panas lainnya di dekatnya. Kehadiran asap ini bisa menjadi indikasi 
@@ -72,7 +72,7 @@ def halaman_penjelasan():
         ini mengundang perhatian dan menimbulkan pertanyaan tentang asal-usul asap tersebut 
         dan potensi bahayanya terhadap lingkungan sekitar.""",
 
-        """Gambar ini secara mencolok menunjukkan keberadaan api dan asap yang muncul secara 
+        """Kelas Smoke and Fire. Gambar ini secara mencolok menunjukkan keberadaan api dan asap yang muncul secara 
         bersamaan, menciptakan pemandangan yang dramatis dan penuh ketegangan. Nyala api yang 
         berkobar dengan warna merah dan oranye yang mencolok tampak menari-nari di antara kepulan 
         asap yang tebal dan gelap, yang membubung tinggi ke langit. Kombinasi antara api yang aktif 
