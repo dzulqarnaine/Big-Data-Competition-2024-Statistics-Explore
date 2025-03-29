@@ -24,7 +24,7 @@ with st.sidebar:
     )
 
 # Muat model YOLO
-model = YOLO(r"C:\KULIAH STATISTIKA UNIVERSITAS SYIAH KUALA\KEGIATAN\BDC SE\Clone Github\Statistics-Explore-2024-Big-Data-Competition\model_yolo.pt") 
+model = YOLO(r"model_yolo.pt") 
 
 # Fungsi untuk Halaman 1
 def halaman_penjelasan():
@@ -37,10 +37,10 @@ def halaman_penjelasan():
 
     # Path ke gambar
     image_paths = [
-        r"C:\KULIAH STATISTIKA UNIVERSITAS SYIAH KUALA\KEGIATAN\BDC SE\Clone Github\Statistics-Explore-2024-Big-Data-Competition\GambarStreamlit\None.jpg",
-        r"C:\KULIAH STATISTIKA UNIVERSITAS SYIAH KUALA\KEGIATAN\BDC SE\Clone Github\Statistics-Explore-2024-Big-Data-Competition\GambarStreamlit\Fire.jpg",
-        r"C:\KULIAH STATISTIKA UNIVERSITAS SYIAH KUALA\KEGIATAN\BDC SE\Clone Github\Statistics-Explore-2024-Big-Data-Competition\GambarStreamlit\Smoke.jpg",
-        r"C:\KULIAH STATISTIKA UNIVERSITAS SYIAH KUALA\KEGIATAN\BDC SE\Clone Github\Statistics-Explore-2024-Big-Data-Competition\GambarStreamlit\Smoke and Fire.jpg"
+        r"Image\None.jpg",
+        r"Image\Fire.jpg",
+        r"Image\Smoke.jpg",
+        r"Image\Smoke and Fire.jpg"
     ]
     
     descriptions = [
