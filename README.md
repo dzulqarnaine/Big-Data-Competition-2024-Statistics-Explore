@@ -5,4 +5,5 @@ Participated in a competition held by Syiah Kuala University with the theme Esta
 Competition link : https://www.kaggle.com/competitions/big-data-competition-statistics-explore-2024
 
 You can access this model using the dashboard with streamlit
+
 Dashboard Link : Dashboard Link : https://forest-fires-predict.streamlit.app/
