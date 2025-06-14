@@ -3,7 +3,7 @@ pandas
 snowflake-connector-python
 streamlit-option-menu
 Pillow
-numpy
+numpy==1.26.4
 ultralytics
 opencv-python-headless==4.7.0.72
 torch==2.0.1
