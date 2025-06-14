@@ -6,3 +6,4 @@ Pillow
 numpy
 ultralytics
 opencv-python-headless==4.7.0.72
+torch==2.0.1
