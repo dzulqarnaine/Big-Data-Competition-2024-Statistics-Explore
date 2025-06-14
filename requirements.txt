@@ -1,9 +1,8 @@
-streamlit==1.43.0
-streamlit-option-menu==0.4.0
-pandas==2.3.0
-numpy==1.23.0
+streamlit
+pandas
+snowflake-connector-python
+streamlit-option-menu
+opencv-python-headless
 Pillow
-scikit-learn==1.7.0
-seaborn==0.13.2
-opencv-python-headless==4.7.0.72
-ultralytics==8.0.45
+numpy
+ultralytics
