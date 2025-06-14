@@ -24,11 +24,11 @@ with st.sidebar:
     )
 
 # Muat model YOLO
-model = YOLO(r"model_yolo.pt") 
+# Gantilah path dengan path relatif di folder aplikasi Streamlit
+model = YOLO('model_yolo.pt')  # Pastikan pathnya sesuai
 
 # Fungsi untuk Halaman 1
 def halaman_penjelasan():
-    # Tampilkan judul di tengah halaman
     st.markdown("""
     <div style="text-align: center;">
         <h1>Penjelasan Kelas Gambar</h1>
@@ -37,58 +37,23 @@ def halaman_penjelasan():
 
     # Path ke gambar
     image_paths = [
-        r"./Image/None.jpg",
-        r"./Image/Fire.jpg",
-        r"./Image/Smoke.jpg",
-        r"./Image/Smoke and Fire.jpg"
+        "./Image/None.jpg",
+        "./Image/Fire.jpg",
+        "./Image/Smoke.jpg",
+        "./Image/Smoke and Fire.jpg"
     ]
     
     descriptions = [
-        """Kelas NONE. Pengamatan visual yang cermat terhadap keseluruhan gambar tidak
-        memberikan indikasi adanya tanda-tanda kebakaran yang biasanya 
-        tampak dalam situasi darurat, seperti jejak hangus pada permukaan,
-        bekas-bekas material yang terbakar, atau adanya asap tipis yang
-        membubung dari area tertentu. Selain itu, tidak ada tanda-tanda
-        kehadiran sumber panas yang tidak biasa, seperti kilatan cahaya atau
-        perubahan warna yang dapat menandakan suhu tinggi. Seluruh elemen yang
-        terlihat dalam gambar tampak normal dan tidak menunjukkan aktivitas yang
-        berpotensi berbahaya. Oleh karena itu, dapat disimpulkan dengan tingkat 
-        keyakinan yang tinggi bahwa kondisi di lokasi tersebut saat ini sepenuhnya
-        aman dan tidak menunjukkan adanya ancaman kebakaran yang perlu diwaspadai.""",
-
-        """Kelas Fire. Gambar ini menunjukkan keberadaan api yang mendominasi area tersebut, 
-        dengan nyala api yang jelas terlihat serta indikasi bahwa api tersebut dapat
-        berkembang dengan cepat jika tidak segera dikendalikan. Warna-warna cerah 
-        seperti merah dan oranye mencolok mengindikasikan bahwa api berada dalam fase 
-        aktif, dengan kemungkinan bahaya besar terhadap lingkungan sekitarnya jika tidak
-        diatasi dengan segera.""",
-
-        """Kelas Smoke. Gambar ini secara jelas menunjukkan dominasi adanya asap yang tebal dan membubung
-        ke udara, menciptakan suasana yang misterius dan mendalam. Asap tersebut tampak 
-        menyelimuti area sekitarnya, dengan warna abu-abu gelap yang menunjukkan potensi adanya 
-        kebakaran atau sumber panas lainnya di dekatnya. Kehadiran asap ini bisa menjadi indikasi 
-        bahwa suatu proses pembakaran sedang berlangsung, baik itu berupa kebakaran kecil, 
-        pembakaran sampah, atau mungkin bahkan aktivitas industri. Dengan demikian, gambaran 
-        ini mengundang perhatian dan menimbulkan pertanyaan tentang asal-usul asap tersebut 
-        dan potensi bahayanya terhadap lingkungan sekitar.""",
-
-        """Kelas Smoke and Fire. Gambar ini secara mencolok menunjukkan keberadaan api dan asap yang muncul secara 
-        bersamaan, menciptakan pemandangan yang dramatis dan penuh ketegangan. Nyala api yang 
-        berkobar dengan warna merah dan oranye yang mencolok tampak menari-nari di antara kepulan 
-        asap yang tebal dan gelap, yang membubung tinggi ke langit. Kombinasi antara api yang aktif 
-        dan asap yang menyelimuti area tersebut memberikan indikasi bahwa suatu proses pembakaran 
-        yang signifikan sedang berlangsung. Selain itu, asap yang terlihat dapat mengisyaratkan 
-        potensi bahaya yang lebih besar, karena dapat menandakan adanya material yang terbakar atau 
-        zat berbahaya di sekitarnya. Pemandangan ini tidak hanya menarik perhatian, tetapi juga 
-        menimbulkan kekhawatiran mengenai keselamatan dan potensi ancaman yang ditimbulkan oleh 
-        kebakaran yang mungkin terjadi di lokasi tersebut"""
+        """Kelas NONE. Pengamatan visual yang cermat terhadap keseluruhan gambar tidak memberikan indikasi adanya tanda-tanda kebakaran yang biasanya ...""",
+        """Kelas Fire. Gambar ini menunjukkan keberadaan api yang mendominasi area tersebut ...""",
+        """Kelas Smoke. Gambar ini secara jelas menunjukkan dominasi adanya asap yang tebal ...""",
+        """Kelas Smoke and Fire. Gambar ini secara mencolok menunjukkan keberadaan api dan asap yang muncul secara bersamaan ..."""
     ]
     
     # Tampilkan gambar dan penjelasan menggunakan layout kolom
     for i in range(4):  # Loop untuk setiap gambar
         image = Image.open(image_paths[i])
 
-        # Buat dua kolom: kolom kiri untuk gambar, kolom kanan untuk penjelasan
         col1, col2 = st.columns([1, 2])
         
         with col1:
@@ -117,13 +82,11 @@ def halaman_klasifikasi():
         st.image(image, caption='Gambar yang diunggah.', use_container_width=True)  # Ganti ke use_container_width
 
         if st.button('Deteksi'):
-            # Konversi gambar ke format numpy array
             img_array = np.array(image)
 
             # Lakukan deteksi menggunakan model YOLOv8
             results = model(img_array)
 
-            # Ambil nama kelas dan probabilitas
             names_dict = results[0].names
             probs = results[0].probs.data.tolist()
             class_name = names_dict[np.argmax(probs)]
@@ -135,7 +98,7 @@ def halaman_klasifikasi():
             </div>
             """, unsafe_allow_html=True)
 
-            st.image(results[0].plot(), caption='Hasil Deteksi', use_container_width=True)  # Ganti ke use_container_width
+            st.image(results[0].plot(), caption='Hasil Deteksi', use_container_width=True)
 
 # Menampilkan halaman berdasarkan pilihan
 if selected == "Tentang":
